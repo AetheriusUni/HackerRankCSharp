@@ -48,16 +48,19 @@ class Result
             }
         }
         
-        // sort important contests
+        // sort important contests from high to low values
         importantContests.Sort();
         importantContests.Reverse();
         
+        // decide which contests to win or lose
         for(int i = 0; i < importantContests.Count; i++)
         {
+            // lose the contests with higher values
             if(i < k)
             {
                 luck+= importantContests[i];
             }
+            // win the contests with lower values
             else
             {
                 luck-= importantContests[i];
